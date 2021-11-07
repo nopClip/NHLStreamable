@@ -23,7 +23,6 @@ To run this project you will need:
 - [PRAW](https://praw.readthedocs.io/en/stable/) - For posting to Reddit
 - [ffmpeg](https://www.ffmpeg.org/) - For creating "Highlight packs"
 - [youtube-dl](https://youtube-dl.org/) - For downloading clips others have posted
-- 
 
 
 
