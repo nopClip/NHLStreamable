@@ -73,3 +73,9 @@ There are a few things you'll want to change in the nhlStreamable script, namely
 - Change redditBase (Line 18) if you don't want to use old reddit.
 - Change sortedPath (Line 20) to where you want the script to save your sorted clips. It saves them in the format [root_dir]\[date]\[Home-Away]\[name].
 - Change path (Line 21) to where OBS (or your recording software of choice) saves your recordings.
+
+
+When you're ready to run the script, run it with
+```
+py nhlStreamable.py
+```
