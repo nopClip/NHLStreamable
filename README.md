@@ -11,6 +11,7 @@ When clipping games during the 2020-21 playoffs, I found that most of my time wa
 - Select a subreddit, and post a clip with a title of your choosing using PRAW
 - Download clips using youtube-dl
 - Merge clips using ffmpeg to create "highlight packs"
+- When you upload a clip to Streamable, it saves it into a sorted file structure
 
 
 
