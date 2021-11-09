@@ -313,7 +313,6 @@ def downloadClip():
         print(e)
     try:
         subprocess.call(['youtube-dl', '-f', 'mp4', url, '-o', f"{sortedPath}/{today.year}-{today.month}-{today.day}\{games[gamePicked]['home']}-{games[gamePicked]['away']}\{output}.mp4"])
-        # os.system(f"youtube-dl {url} -f mp4 -o C:/SortedStreamables/{today.year}-{today.month}-{today.day}\{games[gamePicked]['home']}-{games[gamePicked]['away']}\{output}.mp4")
     except Exception as e:
         print(e)
     try:
