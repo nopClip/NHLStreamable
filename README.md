@@ -76,8 +76,8 @@ Change those lines to be your email for streamable, and your password.
 
 There are a few things you'll want to change in the nhlStreamable script, namely:
 
-- Set redditBot (Line 17) to False if you are not using this script to post to reddit.
-- Change redditBase (Line 18) if you don't want to use old reddit.
+- Set redditBot (Line 21) to False if you are not using this script to post to reddit.
+- Change redditBase (Line 22) if you don't want to use old reddit.
 
 
 
