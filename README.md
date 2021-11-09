@@ -57,23 +57,28 @@ Once praw is installed, return to your nhlStreamable folder, where you should se
 
 ## Setting up the Streamable API
 
-In the nhlStreamable folder is streampy.py. The only lines you need to change in that file is lines 11 & 12:
+In the nhlStreamable folder is config.ini. Inside that file is the lines you will need to change.
 
 ```
-USER = 'YOUR STREAMABLE EMAIL'
-PASS = 'YOUR STREAMABLE PASSWORD'
+username = 'YOUR_STREAMABLE_EMAIL'
+password = 'YOUR_STREAMABLE_PASSWORD'
 ```
 
 Change those lines to be your email for streamable, and your password.
 
-## Things you need to change in nhlStreamable.py
+## Other things you need to change in config.ini
+
+- Change sortedPath (Line 3) to where you want the script to save your sorted clips. It saves them in the format [sortedPath]\[date]\[Home-Away]\[name].
+- Change path (Line 5) to where OBS (or your recording software of choice) saves your recordings.
+- Under [FAVSUB], uncomment the line with the team subreddit where you're most often going to post your clips. Currently r/OttawaSenators is uncommented.
+
+## Other things you need to change in nhlStreamable.py
 
 There are a few things you'll want to change in the nhlStreamable script, namely:
 
 - Set redditBot (Line 17) to False if you are not using this script to post to reddit.
 - Change redditBase (Line 18) if you don't want to use old reddit.
-- Change sortedPath (Line 20) to where you want the script to save your sorted clips. It saves them in the format [root_dir]\[date]\[Home-Away]\[name].
-- Change path (Line 21) to where OBS (or your recording software of choice) saves your recordings.
+
 
 
 When you're ready to run the script, run it with
