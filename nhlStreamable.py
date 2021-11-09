@@ -10,6 +10,10 @@ import sigfig
 import praw
 import ffmpeg
 import subprocess
+import configparser
+
+config = configparser.ConfigParser()
+config.read("config.ini")
 
 reddit = praw.Reddit('bot1')
 reddit.validate_on_submit = True
@@ -17,55 +21,14 @@ reddit.validate_on_submit = True
 redditBot = True # Set this value to True if you are planning on using this script to post to Reddit
 redditBase = "https://old.reddit.com/r/" # Remove "old." from the string if you prefer new Reddit
 
-sortedPath = "C:\\SortedStreamables" # The path where you want your sorted clips to be saved to
-path = "C:\\Streamables" # The path to where OBS saves your clips
+sortedPath = config['FILES']['sortedPath']
+path = config['FILES']['path']
 files = os.listdir(path); # Get the files in the path
 games = {}
 teams = {}
+favSub = config['FAVSUB']['favSub']
 
 
-# Uncomment one of the following. If you uncomment more than one, it will take the last one on the list.
-
-# Atlantic
-# favSub = "BostonBruins"
-# favSub = "sabres"
-# favSub = "DetroitRedWings"
-# favSub = "FloridaPanthers"
-# favSub = "Habs"
-favSub = "OttawaSenators"
-# favSub = "TampaBayLightning"
-# favSub = "leafs"
-
-# Metro
-# favSub = "canes"
-# favSub = "BlueJackets"
-# favSub = "devils"
-# favSub = "NewYorkIslanders"
-# favSub = "rangers"
-# favSub = "Flyers"
-# favSub = "penguins"
-# favSub = "caps"
-
-
-# Pacific
-# favSub = "Coyotes"
-# favSub = "hawks"
-# favSub = "ColoradoAvalanche"
-# favSub = "DallasStars"
-# favSub = "wildhockey"
-# favSub = "Predators"
-# favSub = "stlouisblues"
-# favSub = "winnipegjets"
-
-# Atlantic
-# favSub = "AnaheimDucks"
-# favSub = "CalgaryFlames"
-# favSub = "EdmontonOilers"
-# favSub = "losangeleskings"
-# favSub = "SanJoseSharks"
-# favSub = "SeattleKraken"
-# favSub = "canucks"
-# favSub = "goldenknights"
 
 s = Streamable()
 
