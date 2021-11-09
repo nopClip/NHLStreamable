@@ -457,7 +457,7 @@ def main():
                             input("Press enter to confirm ")
                             post = reddit.subreddit("hockey").submit(redditTitle, url=f"https://streamable.com/{uploadedFile['shortcode']}")
                         if subToPost == "2":
-                            sub = "favSub"
+                            sub = favSub
                             print(f"Posting to r/{favSub}")
                             input("Press enter to confirm ")
                             post = reddit.subreddit(f"{favSub}").submit(redditTitle, url=f"https://streamable.com/{uploadedFile['shortcode']}")
