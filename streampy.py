@@ -1,5 +1,9 @@
 import requests
 import json
+import configparser
+
+config = configparser.ConfigParser()
+config.read("config.ini")
 
 BASE_URL = 'https://api.streamable.com/'
 API_PATH = {
@@ -8,8 +12,8 @@ API_PATH = {
     'users': 'users/',
     'me': 'me'
 }
-USER = 'YOUR STREAMABLE EMAIL'
-PASS = 'YOUR STREAMABLE PASSWORD'
+USER = config['STREAMABLE']['username']
+PASS = config['STREAMABLE']['password']
 
 
 class Streamable:
