@@ -12,6 +12,8 @@ When clipping games during the 2020-21 playoffs, I found that most of my time wa
 - Download clips using youtube-dl
 - Merge clips using ffmpeg to create "highlight packs"
 - When you upload a clip to Streamable, it saves it into a sorted file structure
+- Pulls Game Day Threads from r/Hockey
+- If a goal is being uploaded, it attempts to predict what goal it is
 
 
 
@@ -55,29 +57,16 @@ Once praw is installed, return to your nhlStreamable folder, where you should se
 
 
 
-## Setting up the Streamable API
+## Setting up the Script
 
-In the nhlStreamable folder is config.ini. Inside that file is the lines you will need to change.
-
-```
-username = 'YOUR_STREAMABLE_EMAIL'
-password = 'YOUR_STREAMABLE_PASSWORD'
-```
-
-Change those lines to be your email for streamable, and your password.
-
-## Other things you need to change in config.ini
-
-- Change sortedPath (Line 3) to where you want the script to save your sorted clips. It saves them in the format [sortedPath]\[date]\[Home-Away]\[name].
-- Change path (Line 5) to where OBS (or your recording software of choice) saves your recordings.
-- Under [FAVSUB], uncomment the line with the team subreddit where you're most often going to post your clips. Currently r/OttawaSenators is uncommented.
+Run setup.py, which will set up Streamable, your file structure, and your preference, either new or old reddit.
 
 ## Other things you need to change in nhlStreamable.py
 
 There are a few things you'll want to change in the nhlStreamable script, namely:
 
-- Set redditBot (Line 21) to False if you are not using this script to post to reddit.
-- Change redditBase (Line 22) if you don't want to use old reddit.
+- Set simple (Line 28) to True if you don't want the script to try to predict what goal was scored.
+- Change mainSub (Line 29) if you want to post to r/NHL or another hockey subreddit, not r/Hockey. This will most likely break the detection of Game Day Threads, as the section of the script that detects them is based off the r/Hockey formatting.
 
 
 
