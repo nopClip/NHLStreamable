@@ -28,13 +28,21 @@ games = {}
 teams = {}
 favSub = config['FAVSUB']['favSub']
 
-
-
 s = Streamable()
+
+
 
 def mostRecentFile(path):
     folder_path = path
+
+    #Note: I haven't tested this with anything other than mp4 as that is what I use. These are the recording outputs that OBS supports, however.
+    #file_type = '\*flv'
     file_type = '\*mp4'
+    #file_type = '\*mov'
+    #file_type = '\*mkv'
+    #file_type = '\*ts'
+    #file_type = '\*m3u8'
+
     files = glob.glob(folder_path + file_type)
     max_file = max(files, key=os.path.getctime)
 
@@ -313,6 +321,7 @@ def downloadClip():
         print(e)
     try:
         subprocess.call(['youtube-dl', '-f', 'mp4', url, '-o', f"{sortedPath}/{today.year}-{today.month}-{today.day}\{games[gamePicked]['home']}-{games[gamePicked]['away']}\{output}.mp4"])
+        # os.system(f"youtube-dl {url} -f mp4 -o C:/SortedStreamables/{today.year}-{today.month}-{today.day}\{games[gamePicked]['home']}-{games[gamePicked]['away']}\{output}.mp4")
     except Exception as e:
         print(e)
     try:
